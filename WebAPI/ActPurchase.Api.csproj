@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Web_API</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="ActPurchase.DataAccess\obj\ActPurchase.DataAccess.csproj.nuget.dgspec.json" />
+    <_ContentIncludedByDefault Remove="ActPurchase.DataAccess\obj\project.assets.json" />
+    <_ContentIncludedByDefault Remove="ActPurchase.DataAccess\obj\project.packagespec.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ActPurchase.DataAccess\ActPurchase.DataAccess.csproj" />
+    <ProjectReference Include="..\ActPurchase.Entities.Configurations\ActPurchase.Entities.Configurations.csproj" />
+    <ProjectReference Include="..\ActPurchase.Entities\ActPurchase.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../ActPurchase.DataAccess/ActPurchase.DataAccess.csproj" Id="73e62a46-5b07-43c6-8d2f-4673f97d0845" />
+  <Project Path="../ActPurchase.Entities.Configurations/ActPurchase.Entities.Configurations.csproj" Id="b2a81caa-242a-4060-a1fc-922c68ca7eae" />
+  <Project Path="../ActPurchase.Entities/ActPurchase.Entities.csproj" Id="d71e6b29-1ccb-4ad9-9f04-c3548069d857" />
+  <Project Path="ActPurchase.Api.csproj" />
+</Solution>
