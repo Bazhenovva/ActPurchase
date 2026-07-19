@@ -2,4 +2,13 @@
 
 ИП-24-4
 
-Задание:ASP.NET Core Web API
+
+
+## Пример акта
+
+![Акт закупки имущества](C:\Users\79817\Documents\книги\act.jpg)
+
+Создано 5 сущностей: `Act`, `ActItem`, `Seller`, `Buyer`, `Employee` с полями согласно примеру акта.
+
+Все сущности наследуются от `BaseAuditEntity`
+
