@@ -3,3 +3,7 @@
 ИП-24-4
 
 Задание:ASP.NET Core Web API
+
+## Пример акта
+
+![Акт закупки имущества](images/act_img.jpg)
