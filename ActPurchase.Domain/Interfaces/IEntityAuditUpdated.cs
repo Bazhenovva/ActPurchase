@@ -3,7 +3,7 @@ namespace ActPurchase.Domain.Interfaces;
 /// <summary>
 /// Сущность с аудитом обновления
 /// </summary>
-public interface IEntityAuditUpdate
+public interface IEntityAuditUpdated
 {
     /// <summary>
     /// Дата обновления
