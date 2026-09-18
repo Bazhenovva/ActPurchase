@@ -58,7 +58,7 @@ public class Act : BaseAuditEntity
     /// <summary>
     /// Итоговое количество по всем позициям
     /// </summary>
-    public decimal TotalQuantity { get; set; }
+    public int TotalQuantity { get; set; }
 
     /// <summary>
     /// Итоговая сумма по всем позициям

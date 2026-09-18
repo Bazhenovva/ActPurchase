@@ -1,6 +1,6 @@
 using ActPurchase.Domain.Interfaces;
 
-namespace ActPurchase.Domain.Entities;
+namespace ActPurchase.Domain;
 
 /// <summary>
 /// Базовый класс, который наследуется во всех сущностях,чтобы не повторять код.
@@ -10,7 +10,7 @@ public abstract class BaseAuditEntity :
     IEntity,
     IEntityWithId,
     IEntityAuditCreated,
-    IEntityAuditUpdate,
+    IEntityAuditUpdated,
     IEntityAuditDeletedAt
 {
     /// <summary>
