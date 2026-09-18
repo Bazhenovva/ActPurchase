@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="../ActPurchase.Entities/ActPurchase.Entities.csproj" Id="27a2ec4f-3a48-4b50-96c0-a50298df4809" />
+  <Project Path="../ActPurchase.Domain/ActPurchase.Domain.csproj" Id="73f5ab23-6bcb-4fd2-9850-59d3e749ee8c" />
   <Project Path="ActPurchase.Api.csproj" />
 </Solution>
