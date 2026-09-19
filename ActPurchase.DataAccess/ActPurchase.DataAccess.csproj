@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ActPurchase.Context.EntituFramework\ActPurchase.Context.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\ActPurchase.Context\ActPurchase.Context.csproj" />
+  </ItemGroup>
+
 </Project>
