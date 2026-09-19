@@ -1,8 +1,9 @@
 <Solution>
-  <Folder Name="/ActPurchase.DataAccess/">
-    <Project Path="../ActPurchase.Context.EntituFramework/ActPurchase.Context.EntityFrameworkCore.csproj" Id="525daa1b-7434-423f-9a91-06f4abc2e969" />
-  </Folder>
-  <Project Path="../ActPurchase.Domain/ActPurchase.Domain.csproj" Id="73f5ab23-6bcb-4fd2-9850-59d3e749ee8c" />
-  <Project Path="../ActPurchase.Entites.Configurations/ActPurchase.Entites.Configurations.csproj" Id="7ca84a2c-3ac2-453b-8ab3-5c27bccf1887" />
+  <Project Path="../ActPurchase.Context.EntituFramework/ActPurchase.Context.EntityFrameworkCore.csproj" />
+  <Project Path="../ActPurchase.Context/ActPurchase.Context.csproj" />
+  <Project Path="../ActPurchase.DataAccess/ActPurchase.DataAccess.csproj" />
+  <Project Path="../ActPurchase.Domain/ActPurchase.Domain.csproj" />
+  <Project Path="../ActPurchase.Entites.Configurations/ActPurchase.Entites.Configurations.csproj" />
+  <Project Path="../ActPurchase.Entities/ActPurchase.Entities.csproj" />
   <Project Path="ActPurchase.Api.csproj" />
 </Solution>
