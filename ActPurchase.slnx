@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/ActPurchase.DataAccess/">
+    <Project Path="../ActPurchase.Context.EntituFramework/ActPurchase.Context.EntityFrameworkCore.csproj" />
+    <Project Path="../ActPurchase.Context.Repositories/ActPurchase.Context.Repositories.csproj" />
+    <Project Path="../ActPurchase.Context/ActPurchase.Context.csproj" />
+    <Project Path="../ActPurchase.Dal.Contracts/ActPurchase.Dal.Contracts.csproj" />
+  </Folder>
+  <Project Path="../ActPurchase.Common/ActPurchase.Common.csproj" />
+  <Project Path="../ActPurchase.Domain/ActPurchase.Domain.csproj" />
+  <Project Path="../ActPurchase.Entites.Configurations/ActPurchase.Entites.Configurations.csproj" />
+  <Project Path="../ActPurchase.Repositories.Contracts/ActPurchase.Repositories.Contracts.csproj" />
+  <Project Path="../ActPurchase.Repositories/ActPurchase.Repositories.csproj" />
+  <Project Path="ActPurchase.Api.csproj" />
+</Solution>
