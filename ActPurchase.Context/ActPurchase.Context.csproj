@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ActPurchase.Dal.Contracts\ActPurchase.Dal.Contracts.csproj" />
     <ProjectReference Include="..\ActPurchase.Domain\ActPurchase.Domain.csproj" />
     <ProjectReference Include="..\ActPurchase.Entites.Configurations\ActPurchase.Entites.Configurations.csproj" />
   </ItemGroup>
