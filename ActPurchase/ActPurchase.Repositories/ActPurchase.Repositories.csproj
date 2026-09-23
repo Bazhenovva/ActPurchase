@@ -4,9 +4,17 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UserSecretsId>06213bcc-5689-42db-b45e-3de77db21f08</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.12" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ActPurchase.Context.Repositories\ActPurchase.Context.Repositories.csproj" />
+    <ProjectReference Include="..\ActPurchase.Dal.Contracts\ActPurchase.Dal.Contracts.csproj" />
     <ProjectReference Include="..\ActPurchase.Domain\ActPurchase.Domain.csproj" />
     <ProjectReference Include="..\ActPurchase.Repositories.Contracts\ActPurchase.Repositories.Contracts.csproj" />
   </ItemGroup>
