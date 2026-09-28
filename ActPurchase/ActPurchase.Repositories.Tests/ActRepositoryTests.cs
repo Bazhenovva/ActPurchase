@@ -26,10 +26,10 @@ namespace ActPurchase.Repositories.Tests
         public async Task GetAllActsShouldReturnEmptyCollection()
         {
             //Act
-            var items = await repository.GetAllActsAsync(CancellationToken.None);
+            var result = await repository.GetAllActsAsync(CancellationToken.None);
 
             // Assert
-            items.Should().BeEmpty().And.NotBeNull();
+            result.Should().BeEmpty().And.NotBeNull();
 
         }
 
@@ -135,6 +135,55 @@ namespace ActPurchase.Repositories.Tests
 
             // Assert
             result.Should().BeNull();
+        }
+
+        /// <summary>
+        /// возвращает все неудалённые акты
+        /// </summary>
+        [Fact]
+        public async Task GetAllActsShouldReturnValue()
+        {
+            // Arrange
+            var item1 = TestEntityProvider.Shared.Create<Act>();
+            var item2 = TestEntityProvider.Shared.Create<Act>(x => x.DeletedAt = DateTimeOffset.Now);
+            var item3 = TestEntityProvider.Shared.Create<Act>();
+
+            Context.AddRange(item1, item2, item3);
+            await UnitOfWork.SaveChangesAsync(CancellationToken.None);
+
+            // Act
+            var result = await repository.GetAllActsAsync(CancellationToken.None);
+
+            // Assert
+            result.Should()
+                .NotBeNull()
+                .And.HaveCount(2)
+                .And.ContainSingle(x => x.Id == item1.Id)
+                .And.ContainSingle(x => x.Id == item3.Id);
+        }
+
+        /// <summary>
+        /// сортирует акты по номеру
+        /// </summary>
+        [Fact]
+        public async Task GetAllActsShouldReturnOrderedByNumber()
+        {
+            // Arrange
+            var item1 = TestEntityProvider.Shared.Create<Act>(x => x.Number = "1");
+            var item2 = TestEntityProvider.Shared.Create<Act>(x => x.Number = "2");
+            var item3 = TestEntityProvider.Shared.Create<Act>(x => x.Number = "3");
+
+            Context.AddRange(item1, item2, item3);
+            await UnitOfWork.SaveChangesAsync(CancellationToken.None);
+
+            // Act
+            var result = await repository.GetAllActsAsync(CancellationToken.None);
+
+            // Assert
+            result.Should()
+                .NotBeNull()
+                .And.HaveCount(3)
+                .And.BeInAscendingOrder(x => x.Number);
         }
     }
 }
