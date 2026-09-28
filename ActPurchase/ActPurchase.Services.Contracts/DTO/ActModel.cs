@@ -1,4 +1,4 @@
-﻿namespace ActPurchase.Services.Contracts;
+﻿namespace ActPurchase.Services.Contracts.DTO;
 
 public class ActModel
 {
