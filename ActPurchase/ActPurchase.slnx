@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/ActPurchase.DataAccess/">
+    <Project Path="ActPurchase.Context.EntituFramework/ActPurchase.Context.EntityFrameworkCore.csproj" />
+    <Project Path="ActPurchase.Context.Repositories/ActPurchase.Context.Repositories.csproj" />
+    <Project Path="ActPurchase.Context.Tests/ActPurchase.Context.Tests.csproj" Id="cad1abd6-b4e5-4505-9096-a75d49dc7342" />
+    <Project Path="ActPurchase.Context/ActPurchase.Context.csproj" />
+    <Project Path="ActPurchase.Dal.Contracts/ActPurchase.Dal.Contracts.csproj" />
+  </Folder>
+  <Project Path="ActPurchase.Api/ActPurchase.Api.csproj" />
+  <Project Path="ActPurchase.Common/ActPurchase.Common.csproj" />
+  <Project Path="ActPurchase.Domain/ActPurchase.Domain.csproj" />
+  <Project Path="ActPurchase.Entites.Configurations/ActPurchase.Entites.Configurations.csproj" />
+  <Project Path="ActPurchase.Repositories.Contracts/ActPurchase.Repositories.Contracts.csproj" />
+  <Project Path="ActPurchase.Repositories.Tests/ActPurchase.Repositories.Tests.csproj" Id="834b6d3b-f07b-4c26-878d-2ea571fef3b5" />
+  <Project Path="ActPurchase.Repositories/ActPurchase.Repositories.csproj" />
+</Solution>
