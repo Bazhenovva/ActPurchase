@@ -13,4 +13,7 @@
   <Project Path="ActPurchase.Repositories.Contracts/ActPurchase.Repositories.Contracts.csproj" />
   <Project Path="ActPurchase.Repositories.Tests/ActPurchase.Repositories.Tests.csproj" Id="834b6d3b-f07b-4c26-878d-2ea571fef3b5" />
   <Project Path="ActPurchase.Repositories/ActPurchase.Repositories.csproj" />
+  <Project Path="ActPurchase.Services.Contracts/ActPurchase.Services.Contracts.csproj" />
+  <Project Path="ActPurchase.Services.Tests/ActPurchase.Services.Tests.csproj" />
+  <Project Path="ActPurchase.Services/ActPurchase.Services.csproj" />
 </Solution>

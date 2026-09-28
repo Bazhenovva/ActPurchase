@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ActPurchase.Dal.Contracts\ActPurchase.Dal.Contracts.csproj" />
+      <ProjectReference Include="..\ActPurchase.Domain\ActPurchase.Domain.csproj" />
+      <ProjectReference Include="..\ActPurchase.Services.Contracts\ActPurchase.Services.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>
