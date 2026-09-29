@@ -1,9 +1,9 @@
-namespace ActPurchase.Domain.Entites;
+namespace ActPurchase.Services.Contracts.DTO;
 
 /// <summary>
-/// Директор организации
+/// DTO для создания директора. Это то, что клиент присылает серверу
 /// </summary>
-public class Director : BaseAuditEntity
+public class DirectorCreateModel
 {
     /// <summary>
     /// Фамилия

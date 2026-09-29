@@ -1,6 +1,6 @@
 using ActPurchase.Context.Repositories;
 using ActPurchase.Dal.Contracts.Repositories;
-using ActPurchase.Domain.Entities;
+using ActPurchase.Domain.Entites;
 using ActPurchase.Domain.Enum;
 using ActPurchase.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;

@@ -1,12 +1,12 @@
-namespace ActPurchase.Domain.Entites;
+namespace ActPurchase.Services.Contracts.DTO;
 
 /// <summary>
-/// Позиция акта закупки
+/// DTO для создания. Это то, что клиент присылает серверу
 /// </summary>
-public class ActItem : BaseAuditEntity
+public class ActItemCreateModel
 {
     /// <summary>
-    /// Идентификатор акта, внешний ключ
+    /// Идентификатор акта
     /// </summary>
     public Guid ActId { get; set; }
 
@@ -16,7 +16,7 @@ public class ActItem : BaseAuditEntity
     public string Name { get; set; } = string.Empty;
 
     /// <summary>
-    /// Количество товара
+    /// Количество
     /// </summary>
     public decimal Quantity { get; set; }
 
@@ -24,9 +24,4 @@ public class ActItem : BaseAuditEntity
     /// Цена за единицу
     /// </summary>
     public decimal Price { get; set; }
-
-    /// <summary>
-    /// Сумма
-    /// </summary>
-    public decimal Sum { get; set; }
 }

@@ -1,7 +1,7 @@
 using FluentAssertions;
 using Xunit;
 using ActPurchase.Context.Tests;
-using ActPurchase.Domain.Entities;
+using ActPurchase.Domain.Entites;
 using ActPurchase.Domain.Enum;
 using ActPurchase.Repositories.Contracts;
 using Ahatornn.TestGenerator;

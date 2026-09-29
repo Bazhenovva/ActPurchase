@@ -1,5 +1,5 @@
 using ActPurchase.Context.Tests;
-using ActPurchase.Domain.Entities;
+using ActPurchase.Domain.Entites;
 using ActPurchase.Repositories.Contracts;
 using Ahatornn.TestGenerator;
 using FluentAssertions;

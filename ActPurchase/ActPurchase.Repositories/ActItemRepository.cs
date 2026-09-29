@@ -1,8 +1,8 @@
 using ActPurchase.Repositories.Contracts;
 using ActPurchase.Context.Repositories;
-using ActPurchase.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using ActPurchase.Dal.Contracts.Repositories;
+using ActPurchase.Domain.Entites;
 
 namespace ActPurchase.Repositories
 {

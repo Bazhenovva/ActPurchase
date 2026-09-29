@@ -1,5 +1,5 @@
 using ActPurchase.Dal.Contracts.Repositories;
-using ActPurchase.Domain.Entities;
+using ActPurchase.Domain.Entites;
 
 namespace ActPurchase.Repositories.Contracts
 {

@@ -1,19 +1,19 @@
 using ActPurchase.Domain.Enum;
 
-namespace ActPurchase.Domain.Entites;
+namespace ActPurchase.Services.Contracts.DTO;
 
 /// <summary>
-/// Контрагент ,покупатель или продавец
+/// DTO для создания контрагента. Это то, что клиент присылает серверу
 /// </summary>
-public class Counterparty : BaseAuditEntity
+public class CounterpartyCreateModel
 {
     /// <summary>
-    /// Тип контрагента, покупатель или продавец
+    /// Тип контрагента (покупатель или продавец)
     /// </summary>
     public CounterpartyType Type { get; set; }
 
     /// <summary>
-    /// Название кампании
+    /// Название компании
     /// </summary>
     public string CompanyName { get; set; } = string.Empty;
 
