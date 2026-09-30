@@ -1,6 +1,6 @@
 ﻿namespace ActPurchase.Services.Tests;
 
-public class ActServiceTests
+public class ActModelValidatorTests
 {
     [Fact]
     public void Test1()

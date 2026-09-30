@@ -1,4 +1,4 @@
-namespace ActPurchase.Services.Validators
+namespace ActPurchase.Services.Services
 {
     public class ActService
     {
