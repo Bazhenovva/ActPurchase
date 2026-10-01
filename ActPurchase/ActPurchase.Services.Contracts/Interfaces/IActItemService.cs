@@ -10,7 +10,7 @@ namespace ActPurchase.Services.Contracts.Interfaces
         /// <summary>
         /// Получает список всех позиций
         /// </summary>
-        Task<IReadOnlyCollection<ActItemModel>> GetAllActItemsAsync(CancellationToken cancellationToken);
+        Task<IReadOnlyCollection<ActItemModel>> GetAllActItemsAsync(Guid actId, CancellationToken cancellationToken);
 
         /// <summary>
         /// Получает позицию по идентификатору

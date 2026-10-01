@@ -9,6 +9,7 @@
     <ItemGroup>
       <ProjectReference Include="..\ActPurchase.Dal.Contracts\ActPurchase.Dal.Contracts.csproj" />
       <ProjectReference Include="..\ActPurchase.Domain\ActPurchase.Domain.csproj" />
+      <ProjectReference Include="..\ActPurchase.Repositories.Contracts\ActPurchase.Repositories.Contracts.csproj" />
       <ProjectReference Include="..\ActPurchase.Services.Contracts\ActPurchase.Services.Contracts.csproj" />
     </ItemGroup>
 
