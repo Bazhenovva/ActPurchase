@@ -1,7 +1,7 @@
-using ActPurchase.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ActPurchase.Context.EntityFrameworkCore;
+using ActPurchase.Domain.Entites;
 
 namespace ActPurchase.Entites.Configurations
 {

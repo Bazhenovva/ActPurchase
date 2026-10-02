@@ -1,5 +1,5 @@
 using ActPurchase.Context.EntityFrameworkCore;
-using ActPurchase.Domain.Entities;
+using ActPurchase.Domain.Entites;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

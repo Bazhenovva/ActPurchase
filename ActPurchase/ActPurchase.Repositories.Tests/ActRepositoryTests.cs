@@ -1,8 +1,8 @@
 using FluentAssertions;
 using Xunit;
-using ActPurchase.Domain.Entities;
 using ActPurchase.Repositories.Contracts;
 using ActPurchase.Context.Tests;
+using ActPurchase.Domain.Entites;
 using Ahatornn.TestGenerator;
 
 namespace ActPurchase.Repositories.Tests

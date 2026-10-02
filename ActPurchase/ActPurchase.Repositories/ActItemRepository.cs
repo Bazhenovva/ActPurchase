@@ -1,8 +1,8 @@
 using ActPurchase.Repositories.Contracts;
 using ActPurchase.Context.Repositories;
-using ActPurchase.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using ActPurchase.Dal.Contracts.Repositories;
+using ActPurchase.Domain.Entites;
 
 namespace ActPurchase.Repositories
 {
@@ -13,7 +13,7 @@ namespace ActPurchase.Repositories
     {
         private readonly IReader reader;
 
-        /// </summary>
+        /// <summary>
         /// Инициализирует новый экземпляр <see cref="ActItemRepository"/>
         /// </summary>
         public ActItemRepository(IDbWriterContext writerContext, IReader reader)

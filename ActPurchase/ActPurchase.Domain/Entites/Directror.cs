@@ -1,4 +1,4 @@
-namespace ActPurchase.Domain.Entities;
+namespace ActPurchase.Domain.Entites;
 
 /// <summary>
 /// Директор организации

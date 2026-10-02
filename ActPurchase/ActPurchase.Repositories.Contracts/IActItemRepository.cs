@@ -1,17 +1,17 @@
 using ActPurchase.Dal.Contracts.Repositories;
-using ActPurchase.Domain.Entities;
+using ActPurchase.Domain.Entites;
 
 namespace ActPurchase.Repositories.Contracts
 {
     /// <summary>
     /// Репозиторий работы с <see cref="ActItem"/>
     /// </summary>
-    public interface IActItemRepository
+    public interface IActItemRepository : IBaseWriteRepository<ActItem>
     {
         /// <summary>
-        /// получение колекции всех позиций
+        /// получение коллекции всех позиций
         /// </summary>
-        Task<IReadOnlyCollection<ActItem>> GetAllActItemsAsync(Guid id, CancellationToken cancellationToken);
+        Task<IReadOnlyCollection<ActItem>> GetAllActItemsAsync(Guid actId, CancellationToken cancellationToken);
 
         /// <summary>
         /// Получает позицию по идентификатору

@@ -1,6 +1,6 @@
 using ActPurchase.Domain.Enum;
 
-namespace ActPurchase.Domain.Entities;
+namespace ActPurchase.Domain.Entites;
 
 /// <summary>
 /// Контрагент ,покупатель или продавец

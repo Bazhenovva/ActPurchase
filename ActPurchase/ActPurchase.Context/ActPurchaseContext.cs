@@ -1,5 +1,5 @@
 using ActPurchase.Dal.Contracts.Repositories;
-using ActPurchase.Domain.Entities;
+using ActPurchase.Domain.Entites;
 using ActPurchase.Entites.Configurations;
 using ActPurchase.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
