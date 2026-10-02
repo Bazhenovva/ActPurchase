@@ -13,7 +13,7 @@ namespace ActPurchase.Repositories
     {
         private readonly IReader reader;
 
-        /// </summary>
+        /// <summary>
         /// Инициализирует новый экземпляр <see cref="ActRepository"/>
         /// </summary>
         public ActRepository(IDbWriterContext writerContext, IReader reader)
