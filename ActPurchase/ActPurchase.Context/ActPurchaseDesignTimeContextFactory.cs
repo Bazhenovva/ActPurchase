@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
 
 namespace ActPurchase.Context
 {
@@ -17,8 +18,12 @@ namespace ActPurchase.Context
         /// </remarks>
         public ActPurchaseContext CreateDbContext(string[] args)
         {
-            var connectionString = "Host=localhost;Port=4321;Database=postgres;Username=postgres;Password=1234567890";
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
 
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
             var options = new DbContextOptionsBuilder<ActPurchaseContext>()
                 .UseNpgsql(connectionString)
                 .LogTo(Console.WriteLine)

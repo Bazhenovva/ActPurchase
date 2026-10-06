@@ -7,7 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0" />
+    <PackageReference Include="AutoMapper" Version="16.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="10.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ActPurchase.Context\ActPurchase.Context.csproj" />
+    <ProjectReference Include="..\ActPurchase.Dal.Contracts\ActPurchase.Dal.Contracts.csproj" />
+    <ProjectReference Include="..\ActPurchase.Domain\ActPurchase.Domain.csproj" />
+    <ProjectReference Include="..\ActPurchase.Repositories\ActPurchase.Repositories.csproj" />
+    <ProjectReference Include="..\ActPurchase.Services.Contracts\ActPurchase.Services.Contracts.csproj" />
+    <ProjectReference Include="..\ActPurchase.Services\ActPurchase.Services.csproj" />
   </ItemGroup>
 
 </Project>
