@@ -39,7 +39,7 @@ namespace ActPurchase.Services.Services
         /// <summary>
         /// Получает акт по айди,выбрасывает исключение если не найдено
         /// </summary>
-        async Task <ActModel> IActService.GetByIdAsync(Guid id, CancellationToken cancellationToken)
+        async Task<ActModel> IActService.GetByIdAsync(Guid id, CancellationToken cancellationToken)
         {
             var result = await actRepository.GetActByIdAsync(id, cancellationToken);
             if (result == null)
@@ -54,10 +54,10 @@ namespace ActPurchase.Services.Services
         /// </summary>
         async Task<ActModel> IActService.CreateActAsync(ActCreateModel model, CancellationToken cancellationToken)
         {
-            var resultExisting = await actRepository.GetActByNumberAsync(model.Number,  cancellationToken);
+            var resultExisting = await actRepository.GetActByNumberAsync(model.Number, cancellationToken);
             if (resultExisting != null)
             {
-                throw new ActPurchaseException($"Акт с номером {model.Number} уже существует");
+                throw new ActPurchaseInvalidOperationException($"Акт с номером {model.Number} уже существует");
             }
             var entity = mapper.Map<Act>(model);
             actRepository.Create(entity);
@@ -74,7 +74,7 @@ namespace ActPurchase.Services.Services
             var exsistingNumber = await actRepository.GetActByNumberAsync(model.Number, cancellationToken);
             if (exsistingNumber != null && exsistingNumber.Id != model.Id)
             {
-                throw new ActPurchaseException($"Акт с номером {model.Number} уже существует");
+                throw new ActPurchaseInvalidOperationException($"Акт с номером {model.Number} уже существует");
             }
             var entity = await actRepository.GetActByIdAsync(model.Id, cancellationToken);
             if (entity == null)
@@ -99,7 +99,5 @@ namespace ActPurchase.Services.Services
             actRepository.Delete(entity);
             await unitOfWork.SaveChangesAsync(cancellationToken);
         }
-
-
     }
 }

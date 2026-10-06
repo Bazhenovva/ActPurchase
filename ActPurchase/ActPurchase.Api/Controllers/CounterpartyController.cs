@@ -80,9 +80,10 @@ namespace ActPurchase.Api.Controllers
             CancellationToken cancellationToken)
         {
             var mapped = mapper.Map<CounterpartyModel>(createModel);
-            await validateService.ValidateAsync(mapped, cancellationToken);
 
             mapped.Id = id;
+            await validateService.ValidateAsync(mapped, cancellationToken);
+
             await counterpartyService.UpdateCounterpartyAsync(mapped, cancellationToken);
 
             return NoContent();

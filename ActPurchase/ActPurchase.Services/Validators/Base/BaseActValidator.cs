@@ -16,8 +16,8 @@ namespace ActPurchase.Services.Validators.Base
             RuleFor(x => x.Number)
                 .NotEmpty()
                 .WithMessage("Номер обязателен")
-                .MaximumLength(50)
-                .WithMessage("Номер не может быть больше 50");
+                .MaximumLength(15)
+                .WithMessage("Номер не может быть больше 15");
 
             RuleFor(x => x.City)
                 .NotEmpty()
@@ -28,8 +28,8 @@ namespace ActPurchase.Services.Validators.Base
             RuleFor(x => x.Type)
                 .NotEmpty()
                 .WithMessage("Тип обязателен")
-                .MaximumLength(15)
-                .WithMessage("Тип не может быть более 15 символов");
+                .MaximumLength(50)
+                .WithMessage("Тип не может быть более 50 символов");
         }
     }
 }

@@ -14,16 +14,20 @@ public class ServiceProfile : Profile
     /// </summary>
     public ServiceProfile()
     {
-        CreateMap<Act, ActModel>().ReverseMap();
+        CreateMap<Act, ActModel>();
+        CreateMap<ActModel, Act>();
         CreateMap<ActCreateModel, Act>();
 
-        CreateMap<ActItem, ActItemModel>().ReverseMap();
+        CreateMap<ActItem, ActItemModel>();
+        CreateMap<ActItemModel, ActItem>();
         CreateMap<ActItemCreateModel, ActItem>();
 
-        CreateMap<Counterparty, CounterpartyModel>().ReverseMap();
+        CreateMap<Counterparty, CounterpartyModel>();
+        CreateMap<CounterpartyModel, Counterparty>();
         CreateMap<CounterpartyCreateModel, Counterparty>();
 
-        CreateMap<Director, DirectorModel>().ReverseMap();
+        CreateMap<Director, DirectorModel>();
+        CreateMap<DirectorModel, Director>();
         CreateMap<DirectorCreateModel, Director>();
     }
 }

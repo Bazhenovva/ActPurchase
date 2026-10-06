@@ -80,8 +80,8 @@ namespace ActPurchase.Api.Controllers
             CancellationToken cancellationToken)
         {
             var mapped = mapper.Map<ActModel>(createModel);
-            mapped.Id = id;
 
+            mapped.Id = id;
             await validateService.ValidateAsync(mapped, cancellationToken);
 
             await actService.UpdateActAsync(mapped, cancellationToken);

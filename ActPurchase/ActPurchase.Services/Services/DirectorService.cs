@@ -53,7 +53,7 @@ namespace ActPurchase.Services.Services
             var existing = await directorRepository.GetDirectorByFullNameAsync(model.LastName, model.FirstName, cancellationToken);
             if (existing != null)
             {
-                throw new ActPurchaseException($"Директор {model.LastName} {model.FirstName} уже существует");
+                throw new ActPurchaseInvalidOperationException($"Директор {model.LastName} {model.FirstName} уже существует");
             }
 
             var entity = mapper.Map<Director>(model);
@@ -72,7 +72,7 @@ namespace ActPurchase.Services.Services
             var existingByFullName = await directorRepository.GetDirectorByFullNameAsync(model.LastName, model.FirstName, cancellationToken);
             if (existingByFullName != null && existingByFullName.Id != model.Id)
             {
-                throw new ActPurchaseException($"Директор {model.LastName} {model.FirstName} уже существует");
+                throw new ActPurchaseInvalidOperationException($"Директор {model.LastName} {model.FirstName} уже существует");
             }
 
             var entity = await directorRepository.GetDirectorByIdAsync(model.Id, cancellationToken);

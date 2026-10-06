@@ -23,14 +23,17 @@ namespace ActPurchase.Api.Automapper
             CreateMap<ActItemModel, ActItemApiModel>();
             CreateMap<ActItemApiModel, ActItemModel>();
             CreateMap<ActItemCreateApiModel, ActItemCreateModel>();
+            CreateMap<ActItemCreateApiModel, ActItemModel>();
 
             CreateMap<CounterpartyModel, CounterpartyApiModel>();
             CreateMap<CounterpartyApiModel, CounterpartyModel>();
             CreateMap<CounterpartyCreateApiModel, CounterpartyCreateModel>();
+            CreateMap<CounterpartyCreateApiModel, CounterpartyModel>();
 
             CreateMap<DirectorModel, DirectorApiModel>();
             CreateMap<DirectorApiModel, DirectorModel>();
             CreateMap<DirectorCreateApiModel, DirectorCreateModel>();
+            CreateMap<DirectorCreateApiModel, DirectorModel>();
         }
     }
 }
