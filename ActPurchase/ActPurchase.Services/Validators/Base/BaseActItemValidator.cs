@@ -20,7 +20,7 @@ namespace ActPurchase.Services.Validators.Base
             RuleFor(x => x.Name)
                 .NotEmpty()
                 .WithMessage("Наименование обязательно")
-                .MaximumLength(15)
+                .MaximumLength(75)
                 .WithMessage("Наименование не более 15 символов");
 
             RuleFor(x => x.Quantity)

@@ -40,6 +40,37 @@ namespace ActPurchase.Entites.Configurations
             builder.HasOne<Act>()
             .WithMany(x => x.Items)
             .HasForeignKey(x => x.ActId);
+
+            var seedDate = new DateTimeOffset(2026, 1, 1, 0, 0, 0, TimeSpan.Zero);
+
+            builder.HasData(
+                new ActItem
+                {
+                    Id = Guid.Parse("66666666-6666-6666-6666-666666666666"),
+                    ActId = Guid.Parse("33333333-3333-3333-3333-333333333333"),
+                    Name = "Стол письменный",
+                    Quantity = 2,
+                    Price = 5000,
+                    Sum = 10000,
+                    CreatedAt = seedDate,
+                    CreatedBy = "System",
+                    UpdatedAt = seedDate,
+                    UpdatedBy = "System"
+                },
+                new ActItem
+                {
+                    Id = Guid.Parse("77777777-7777-7777-7777-777777777777"),
+                    ActId = Guid.Parse("33333333-3333-3333-3333-333333333333"),
+                    Name = "Стул офисный",
+                    Quantity = 4,
+                    Price = 1500,
+                    Sum = 6000,
+                    CreatedAt = seedDate,
+                    CreatedBy = "System",
+                    UpdatedAt = seedDate,
+                    UpdatedBy = "System"
+                }
+            );
         }
     }
 }

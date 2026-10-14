@@ -53,7 +53,7 @@ namespace ActPurchase.Services.Services
             var existing = await counterpartyRepository.GetCounterpartyByInnAsync(model.Inn, cancellationToken);
             if (existing != null)
             {
-                throw new ActPurchaseException($"Контрагент с ИНН {model.Inn} уже существует");
+                throw new ActPurchaseInvalidOperationException($"Контрагент с ИНН {model.Inn} уже существует");
             }
 
             var entity = mapper.Map<Counterparty>(model);
@@ -72,7 +72,7 @@ namespace ActPurchase.Services.Services
             var existingByInn = await counterpartyRepository.GetCounterpartyByInnAsync(model.Inn, cancellationToken);
             if (existingByInn != null && existingByInn.Id != model.Id)
             {
-                throw new ActPurchaseException($"Контрагент с ИНН {model.Inn} уже существует");
+                throw new ActPurchaseInvalidOperationException($"Контрагент с ИНН {model.Inn} уже существует");
             }
 
             var entity = await counterpartyRepository.GetCounterpartyByIdAsync(model.Id, cancellationToken);
