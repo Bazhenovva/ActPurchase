@@ -99,7 +99,5 @@ namespace ActPurchase.Api.Controllers
             await directorService.DeleteDirectorAsync(id, cancellationToken);
             return NoContent();
         }
-
     }
-
 }

@@ -1,7 +1,7 @@
 using ActPurchase.Services.Contracts.DTO;
 using ActPurchase.Services.Validators.Base;
 
-namespace ActPurchase.Services.Validators;
+namespace ActPurchase.Services.Validators.Act;
 
 /// <summary>
 /// Валидатор модели акта

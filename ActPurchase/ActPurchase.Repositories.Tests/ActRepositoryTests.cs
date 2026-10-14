@@ -4,16 +4,16 @@ using ActPurchase.Repositories.Contracts;
 using ActPurchase.Context.Tests;
 using ActPurchase.Domain.Entites;
 using Ahatornn.TestGenerator;
+using ActPurchase.Context;
 
 namespace ActPurchase.Repositories.Tests
 {
+    /// <summary>
+    /// Тесты для <see cref="ActRepository"/>
+    /// </summary>
     public class ActRepositoryTests : ActPurchaseContextInMemory
     {
         private readonly IActRepository repository;
-
-        /// <summary>
-        /// Тесты для <see cref="ActRepository"/>
-        /// </summary>
         public ActRepositoryTests()
         {
             repository = new ActRepository(WriterContext, Context);
@@ -40,16 +40,14 @@ namespace ActPurchase.Repositories.Tests
         public async Task GetActByIdShouldReturnValue()
         {
             // Arrange
-            var item = TestEntityProvider.Shared.Create<Act>();
-            Context.Add(item);
-            await UnitOfWork.SaveChangesAsync(CancellationToken.None);
+            var entity = await SeedActAsync();
 
             // Act
-            var result = await repository.GetActByIdAsync(item.Id, CancellationToken.None);
+            var result = await repository.GetActByIdAsync(entity.Id, CancellationToken.None);
 
             // Assert
             result.Should().NotBeNull();
-            result.Id.Should().Be(item.Id);
+            result!.Id.Should().Be(entity.Id);
         }
 
         /// <summary>
@@ -184,6 +182,27 @@ namespace ActPurchase.Repositories.Tests
                 .NotBeNull()
                 .And.HaveCount(3)
                 .And.BeInAscendingOrder(x => x.Number);
+        }
+        /// <summary>
+        /// Создаёт акт с зависимостями: директор, покупатель, продавец
+        /// </summary>
+        private async Task<Act> SeedActAsync()
+        {
+            var director = TestEntityProvider.Shared.Create<Director>();
+            var buyer = TestEntityProvider.Shared.Create<Counterparty>();
+            var seller = TestEntityProvider.Shared.Create<Counterparty>();
+            Context.AddRange(director, buyer, seller);
+            await UnitOfWork.SaveChangesAsync(CancellationToken.None);
+
+            var entity = TestEntityProvider.Shared.Create<Act>(x =>
+            {
+                x.BuyerId = buyer.Id;
+                x.SellerId = seller.Id;
+                x.DirectorId = director.Id;
+            });
+            Context.Add(entity);
+            await UnitOfWork.SaveChangesAsync(CancellationToken.None);
+            return entity;
         }
     }
 }

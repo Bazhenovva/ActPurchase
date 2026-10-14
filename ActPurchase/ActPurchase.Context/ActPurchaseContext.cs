@@ -1,7 +1,6 @@
 using ActPurchase.Dal.Contracts.Repositories;
 using ActPurchase.Domain.Entites;
 using ActPurchase.Entites.Configurations;
-using ActPurchase.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace ActPurchase.Context
@@ -38,7 +37,7 @@ namespace ActPurchase.Context
         public DbSet<Director> Directors { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

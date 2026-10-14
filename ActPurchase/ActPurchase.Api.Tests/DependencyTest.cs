@@ -15,7 +15,7 @@ public class DependencyTest : IClassFixture<WebApplicationFactory<Program>>
     private readonly WebApplicationFactory<Program> factory;
 
     /// <summary>
-    /// ctor
+    /// Инициализирует тестовый класс с настроенной фабрикой
     /// </summary>
     public DependencyTest(WebApplicationFactory<Program> factory)
     {

@@ -2,7 +2,7 @@ using ActPurchase.Services.Contracts.DTO;
 using ActPurchase.Services.Validators.Base;
 using FluentValidation;
 
-namespace ActPurchase.Services.Validators;
+namespace ActPurchase.Services.Validators.Counterparty;
 
 /// <summary>
 /// Валидатор модели контрагента

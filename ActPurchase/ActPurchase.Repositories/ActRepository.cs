@@ -37,6 +37,10 @@ namespace ActPurchase.Repositories
         Task<Act?> IActRepository.GetActByIdAsync(Guid id, CancellationToken cancellationToken)
             => reader.Read<Act>()
             .NotDeletedAt()
+            .Include(x => x.Buyer)
+            .Include(x => x.Seller)
+            .Include(x => x.Director)
+            .Include(x => x.Items)
             .ById(id)
             .FirstOrDefaultAsync(cancellationToken);
 

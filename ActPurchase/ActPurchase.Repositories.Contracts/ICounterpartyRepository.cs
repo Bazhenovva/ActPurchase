@@ -39,6 +39,5 @@ namespace ActPurchase.Repositories.Contracts
         /// получает всех продавцов
         /// </summary>
         Task<IReadOnlyCollection<Counterparty>> GetSellersAsync(CancellationToken cancellationToken);
-
     }
 }

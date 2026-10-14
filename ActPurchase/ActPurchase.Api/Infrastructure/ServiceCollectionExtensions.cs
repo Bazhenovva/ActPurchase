@@ -9,6 +9,9 @@ namespace ActPurchase.Api.Infrastructure;
 
 public static class ServiceCollectionExtensions
 {
+    /// <summary>
+    /// Находит все классы-реализации в указанной сборке и регистрирует их
+    /// </summary>
     public static void RegisterImplementationsOf<TService>(this IServiceCollection services,
         Assembly implementationsAssembly,
         ServiceLifetime lifetime)

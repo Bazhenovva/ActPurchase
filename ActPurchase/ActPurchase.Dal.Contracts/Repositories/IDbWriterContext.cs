@@ -21,6 +21,5 @@ namespace ActPurchase.Dal.Contracts.Repositories
         /// Провайдер имени текда ущего пользователя
         /// </summary>
         IIdentityProvider IdentityProvider { get; }
-
     }
 }
