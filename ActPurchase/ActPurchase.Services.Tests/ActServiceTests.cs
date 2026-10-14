@@ -10,7 +10,6 @@ using Ahatornn.TestGenerator;
 using AutoMapper;
 using FluentAssertions;
 using Microsoft.Extensions.Logging.Abstractions;
-using Xunit;
 
 namespace ActPurchase.Services.Tests;
 
@@ -78,9 +77,7 @@ public class ActServiceTests : ActPurchaseContextInMemory
     public async Task GetByIdShouldReturnValue()
     {
         // Arrange
-        var entity = TestEntityProvider.Shared.Create<Act>();
-        Context.Add(entity);
-        await UnitOfWork.SaveChangesAsync(CancellationToken.None);
+        var entity = await SeedActAsync();
 
         // Act
         var result = await actService.GetByIdAsync(entity.Id, CancellationToken.None);
@@ -156,9 +153,7 @@ public class ActServiceTests : ActPurchaseContextInMemory
     public async Task UpdateActShouldWork()
     {
         // Arrange
-        var entity = TestEntityProvider.Shared.Create<Act>();
-        Context.Add(entity);
-        await UnitOfWork.SaveChangesAsync(CancellationToken.None);
+        var entity = await SeedActAsync();
 
         var updateModel = TestEntityProvider.Shared.Create<ActModel>(x =>
         {
@@ -226,9 +221,7 @@ public class ActServiceTests : ActPurchaseContextInMemory
     public async Task DeleteActShouldWork()
     {
         // Arrange
-        var entity = TestEntityProvider.Shared.Create<Act>();
-        Context.Add(entity);
-        await UnitOfWork.SaveChangesAsync(CancellationToken.None);
+        var entity = await SeedActAsync();
 
         // Act
         await actService.DeleteActAsync(entity.Id, CancellationToken.None);
@@ -248,5 +241,27 @@ public class ActServiceTests : ActPurchaseContextInMemory
 
         // Assert
         await act.Should().ThrowAsync<EntityNotFoundException<Act>>();
+    }
+
+    /// <summary>
+    /// Создаёт акт с зависимостями: директор, покупатель, продавец
+    /// </summary>
+    private async Task<Act> SeedActAsync()
+    {
+        var director = TestEntityProvider.Shared.Create<Director>();
+        var buyer = TestEntityProvider.Shared.Create<Counterparty>();
+        var seller = TestEntityProvider.Shared.Create<Counterparty>();
+        Context.AddRange(director, buyer, seller);
+        await UnitOfWork.SaveChangesAsync(CancellationToken.None);
+
+        var entity = TestEntityProvider.Shared.Create<Act>(x =>
+        {
+            x.BuyerId = buyer.Id;
+            x.SellerId = seller.Id;
+            x.DirectorId = director.Id;
+        });
+        Context.Add(entity);
+        await UnitOfWork.SaveChangesAsync(CancellationToken.None);
+        return entity;
     }
 }

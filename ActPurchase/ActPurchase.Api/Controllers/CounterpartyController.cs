@@ -99,7 +99,5 @@ namespace ActPurchase.Api.Controllers
             await counterpartyService.DeleteCounterpartyAsync(id, cancellationToken);
             return NoContent();
         }
-
     }
-
 }

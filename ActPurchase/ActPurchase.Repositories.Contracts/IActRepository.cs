@@ -22,6 +22,5 @@ namespace ActPurchase.Repositories.Contracts
         /// получение акта по номеру
         /// </summary>
         Task<Act?> GetActByNumberAsync(string number, CancellationToken cancellationToken);
-
     }
 }

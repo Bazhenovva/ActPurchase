@@ -14,7 +14,7 @@ namespace ActPurchase.Repositories
     {
         private readonly IReader reader;
 
-        /// </summary>
+        /// <summary>
         /// Инициализирует новый экземпляр <see cref="CounterpartyRepository"/>
         /// </summary>
         public CounterpartyRepository(IDbWriterContext writerContext, IReader reader)

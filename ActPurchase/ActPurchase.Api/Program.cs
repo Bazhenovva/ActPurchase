@@ -9,13 +9,11 @@ using ActPurchase.Repositories.Contracts;
 using ActPurchase.Services.Services;
 using ActPurchase.Services.Automapper;
 using ActPurchase.Services.Contracts.Interfaces;
-using ActPurchase.Services.Validators;
+using ActPurchase.Services.Validators.Act;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
 
 builder.Services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 builder.Services.AddSingleton<IIdentityProvider, IdentityProvider>();
@@ -34,6 +32,7 @@ builder.Services.AddScoped<IActService, ActService>();
 builder.Services.AddScoped<IActItemService, ActItemService>();
 builder.Services.AddScoped<ICounterpartyService, CounterpartyService>();
 builder.Services.AddScoped<IDirectorService, DirectorService>();
+builder.Services.AddScoped<IActExcelService, ActExcelService>();
 
 builder.Services.AddScoped<IDbWriterContext, DbWriterContext>();
 

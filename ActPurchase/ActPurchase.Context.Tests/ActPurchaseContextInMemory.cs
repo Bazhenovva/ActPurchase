@@ -1,4 +1,3 @@
-using ActPurchase.Context;
 using ActPurchase.Dal.Contracts.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -16,7 +15,7 @@ public class ActPurchaseContextInMemory : IAsyncDisposable
     protected ActPurchaseContext Context { get; }
 
     /// <summary>
-    /// Единица работы для сохранения изменений 
+    /// Единица работы для сохранения изменений
     /// </summary>
     protected IUnitOfWork UnitOfWork => Context;
 

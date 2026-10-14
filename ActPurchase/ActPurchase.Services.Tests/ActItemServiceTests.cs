@@ -10,7 +10,6 @@ using Ahatornn.TestGenerator;
 using AutoMapper;
 using FluentAssertions;
 using Microsoft.Extensions.Logging.Abstractions;
-using Xunit;
 
 namespace ActPurchase.Services.Tests;
 

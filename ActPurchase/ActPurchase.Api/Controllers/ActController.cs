@@ -18,15 +18,17 @@ namespace ActPurchase.Api.Controllers
         private readonly IActService actService;
         private readonly IMapper mapper;
         private readonly IValidateService validateService;
+        private readonly IActExcelService actExcelService;
 
         /// <summary>
         /// Инициализирует новый экземпляр контроллера актов
         /// </summary>
-        public ActController(IActService actService, IMapper mapper, IValidateService validateService)
+        public ActController(IActService actService, IMapper mapper, IValidateService validateService, IActExcelService actExcelService)
         {
             this.actService = actService;
             this.mapper = mapper;
             this.validateService = validateService;
+            this.actExcelService = actExcelService;
         }
 
         /// <summary>
@@ -100,6 +102,20 @@ namespace ActPurchase.Api.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Получить Excel-файл по акту
+        /// </summary>
+        [HttpGet("{id:guid}/excel")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetActExcel(Guid id, CancellationToken cancellationToken)
+        {
+            var act = await actService.GetByIdAsync(id, cancellationToken);
+            var stream = await actExcelService.GenerateActExcelAsync(act, cancellationToken);
+            return File(
+                stream,
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                $"act-{id}.xlsx");
+        }
     }
-
 }

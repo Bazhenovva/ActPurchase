@@ -311,4 +311,23 @@ public class ActControllerTests : IntegrationTestBase
         await UnitOfWork.SaveChangesAsync();
         return entity;
     }
+
+    /// <summary>
+    /// GET /Act/{id}/excel возвращает Excel-файл
+    /// </summary>
+    [Fact]
+    public async Task GetActExcel_ReturnsFile()
+    {
+        var seeded = await SeedActAsync();
+
+        var client = CreateClient();
+        var response = await client.GetAsync($"/Act/{seeded.Id}/excel");
+
+        response.StatusCode.Should().Be(HttpStatusCode.OK);
+        response.Content.Headers.ContentType!.MediaType
+            .Should().Be("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+
+        var bytes = await response.Content.ReadAsByteArrayAsync();
+        bytes.Should().NotBeEmpty();
+    }
 }

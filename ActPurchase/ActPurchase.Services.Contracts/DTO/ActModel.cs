@@ -19,4 +19,24 @@ public class ActModel : ActCreateModel
     /// Итоговая сумма
     /// </summary>
     public decimal TotalSum { get; set; }
+
+    /// <summary>
+    /// Покупатель
+    /// </summary>
+    public CounterpartyModel? Buyer { get; set; }
+
+    /// <summary>
+    /// Продавец
+    /// </summary>
+    public CounterpartyModel? Seller { get; set; }
+
+    /// <summary>
+    /// Директор
+    /// </summary>
+    public DirectorModel? Director { get; set; }
+
+    /// <summary>
+    /// Позиции акта
+    /// </summary>
+    public IReadOnlyCollection<ActItemModel> Items { get; set; } = [];
 }

@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using ActPurchase.Domain.Interfaces;
 
 namespace ActPurchase.Dal.Contracts.Repositories
@@ -11,7 +8,7 @@ namespace ActPurchase.Dal.Contracts.Repositories
     public interface IWriter
     {
         /// <summary>
-        /// создает новую сущность в контекст 
+        /// создает новую сущность в контекст
         /// </summary>
         void Create<TEntity>(TEntity entity) where TEntity : class, IEntityWithId;
 
@@ -24,6 +21,5 @@ namespace ActPurchase.Dal.Contracts.Repositories
         /// удаляет сущность в контексе
         /// </summary>
         void Delete<TEntity>(TEntity entity) where TEntity : class, IEntityWithId;
-
     }
 }

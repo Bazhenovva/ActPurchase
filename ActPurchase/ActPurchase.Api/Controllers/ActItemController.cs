@@ -100,7 +100,5 @@ namespace ActPurchase.Api.Controllers
             await actItemService.DeleteActItemAsync(id, cancellationToken);
             return NoContent();
         }
-
     }
-
 }

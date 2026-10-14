@@ -7,13 +7,13 @@ using Xunit;
 
 namespace ActPurchase.Repositories.Tests
 {
+    /// <summary>
+    /// Тесты для <see cref="ActItemRepository"/>
+    /// </summary>
     public class ActItemRepositoryTests : ActPurchaseContextInMemory
     {
         private readonly IActItemRepository repository;
 
-        /// <summary>
-        /// Тесты для <see cref="ActItemRepository"/>
-        /// </summary>
         public ActItemRepositoryTests()
         {
             repository = new ActItemRepository(WriterContext, Context);
